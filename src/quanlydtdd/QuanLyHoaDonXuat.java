@@ -8,6 +8,7 @@ package quanlydtdd;
 import DTO.hoadonxuatDTO;
 import BUS.hoadonxuatBUS;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -27,7 +28,7 @@ public class QuanLyHoaDonXuat extends javax.swing.JInternalFrame {
         modeltable.getDataVector().removeAllElements();
         for (int i = 0; i < dshd.size(); i++) {
             hoadonxuatDTO a = (hoadonxuatDTO) dshd.get(i);
-            modeltable.insertRow(i, new Object[]{a.mahdx, a.manv, a.makh, a.ngayhd, a.tongtien});
+            modeltable.insertRow(i, new Object[]{a.mahdx, a.manv, a.makh, a.ngayhd, String.format("%.0f", a.tongtien)});
         }
         jTable1.setModel(modeltable);
     }
@@ -320,6 +321,9 @@ public class QuanLyHoaDonXuat extends javax.swing.JInternalFrame {
         String tukhoa = TuKhoaText.getText();
         ArrayList dshd = hoadonxuatBUS.TimKiemTheoTuKhoa(tukhoa);
         HienThiDS(dshd);
+        if(dshd.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Không tìm thấy kết quả!!!","Not found",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_TimButtonActionPerformed
 
     private void DanhSachButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DanhSachButtonActionPerformed
@@ -332,12 +336,12 @@ public class QuanLyHoaDonXuat extends javax.swing.JInternalFrame {
         String manv = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 1);
         String makh = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 2);
         String ngayxuat = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 3);
-        float tongtien = (float) modeltable.getValueAt(jTable1.getSelectedRow(), 4);
+        String tongtien = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 4);
         MaHDText.setText(mahd);
         MaNVText.setText(manv);
         MaKhachText.setText(makh);
         NgayXuatText.setText(ngayxuat);
-        TongTienText.setText(String.valueOf(tongtien));
+        TongTienText.setText(tongtien);
         MaHDText.enable();
         MaNVText.enable();
         MaKhachText.enable();
@@ -356,7 +360,7 @@ public class QuanLyHoaDonXuat extends javax.swing.JInternalFrame {
         ct.setMNV(MaNVText.getText());
         ct.setMKH(MaKhachText.getText());
         ct.setNX(NgayXuatText.getText());
-        ct.setTT(Float.valueOf(TongTienText.getText()));
+        ct.setTT(TongTienText.getText());
         ct.setLocationRelativeTo(null);
         ct.setVisible(true);
         ct.setDefaultCloseOperation(javax.swing.JFrame.DISPOSE_ON_CLOSE);

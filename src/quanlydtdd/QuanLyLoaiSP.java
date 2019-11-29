@@ -243,6 +243,16 @@ public class QuanLyLoaiSP extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_TenTextActionPerformed
 
     private void SuaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuaButtonActionPerformed
+        if(MaLoaiText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã loại sản phẩm!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(TenText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập tên loại sản phẩm!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         loaisanphamDTO l = new loaisanphamDTO();
         l.maloai = MaLoaiText.getText();
         l.tenloai = TenText.getText();
@@ -289,6 +299,9 @@ public class QuanLyLoaiSP extends javax.swing.JInternalFrame {
         String tukhoa = TuKhoaText.getText();
         ArrayList dsl = loaisanphamBUS.TimKiemTheoTuKhoa(tukhoa);
         HienThiDS(dsl);
+        if(dsl.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Không tìm thấy kết quả!!!","Not found",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_TimButtonActionPerformed
 
     private void DanhSachButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DanhSachButtonActionPerformed

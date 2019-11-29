@@ -61,12 +61,12 @@ public class nhanvienDAO {
             Connection con =ConnectionProvider.Connect();
             
             String sql= "SELECT * FROM nhanvien WHERE manv LIKE '%" + tukhoa +"%'"
-                                            +" OR ho LIKE '%" + tukhoa + "%'"
-                                            +" OR ten LIKE '%" + tukhoa + "%'"
+                                            +" OR ho LIKE N'%" + tukhoa + "%'"
+                                            +" OR ten LIKE N'%" + tukhoa + "%'"
                                             +" OR sdt LIKE '%" + tukhoa + "%'"
-                                            +" OR diachi LIKE '%" + tukhoa + "%'"
+                                            +" OR diachi LIKE N'%" + tukhoa + "%'"
                                             +" OR ngayvaolam LIKE '%" + tukhoa + "%'"
-                                            +" OR chucvu LIKE '%" + tukhoa + "%'"
+                                            +" OR chucvu LIKE N'%" + tukhoa + "%'"
                                             +" OR luong LIKE '%" + tukhoa + "%'";
             Statement st= con.createStatement();
             ResultSet rs= st.executeQuery(sql);

@@ -308,6 +308,16 @@ public class QuanLyKhachHang extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_DiaChiTextActionPerformed
 
     private void SuaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuaButtonActionPerformed
+        if(MaKHText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã khách hàng!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(TenText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập tên khách hàng!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         khachhangDTO kh = new khachhangDTO();
         kh.makh = MaKHText.getText();
         kh.ho = HoText.getText();
@@ -339,6 +349,9 @@ public class QuanLyKhachHang extends javax.swing.JInternalFrame {
         String tukhoa = TuKhoaText.getText();
         ArrayList dskh = khachhangBUS.TimKiemTheoTuKhoa(tukhoa);
         HienThiDS(dskh);
+        if(dskh.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Không tìm thấy kết quả!!!","Not found",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_TimButtonActionPerformed
 
     private void DanhSachButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DanhSachButtonActionPerformed

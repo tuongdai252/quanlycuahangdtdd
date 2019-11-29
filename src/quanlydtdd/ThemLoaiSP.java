@@ -141,6 +141,16 @@ public class ThemLoaiSP extends javax.swing.JFrame {
     }//GEN-LAST:event_HuyButtonActionPerformed
 
     private void ThemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemButtonActionPerformed
+        if(MaLoaiText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã loại sản phẩm!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(TenText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập tên loại sản phẩm!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         if (loaisanphamBUS.kiemTraTonTai(MaLoaiText.getText()) == true)
         {
             JOptionPane.showConfirmDialog((Component) null, "Mã loại sản phẩm đã tồn tại", "alert", JOptionPane.CLOSED_OPTION);

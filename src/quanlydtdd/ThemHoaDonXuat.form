@@ -110,9 +110,9 @@
                       <Component id="DonGiaLabel" min="-2" pref="56" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="DonGiaText" min="-2" pref="120" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Component id="ThemButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="XoaButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -130,11 +130,9 @@
                               <Component id="SOLuongLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="DonGiaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="DonGiaText" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="ThemButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="XoaButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="XoaButton" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>

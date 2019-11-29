@@ -54,7 +54,7 @@ public class loaisanphamDAO {
             Connection con =ConnectionProvider.Connect();
             
             String sql= "SELECT * FROM loaisanpham WHERE maloai LIKE '%" + tukhoa +"%'"
-                                            +" OR tenloai LIKE '%" + tukhoa + "%'";
+                                            +" OR tenloai LIKE N'%" + tukhoa + "%'";
             Statement st= con.createStatement();
             ResultSet rs= st.executeQuery(sql);
 

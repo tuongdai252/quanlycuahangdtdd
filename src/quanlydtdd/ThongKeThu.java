@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 public class ThongKeThu extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form QuanLyThongTinSanPham
+     * Creates new form ThongKeThu
      */
     String [] columns = new String [] {"Mã hóa đơn","Ngày xuất","Tổng tiền"};
     DefaultTableModel modeltable = new DefaultTableModel(null, columns);
@@ -28,7 +28,7 @@ public class ThongKeThu extends javax.swing.JInternalFrame {
         modeltable.getDataVector().removeAllElements();
         for (int i = 0; i < dshd.size(); i++) {
             hoadonxuatDTO a = (hoadonxuatDTO) dshd.get(i);
-            modeltable.insertRow(i, new Object[]{a.mahdx, a.ngayhd, a.tongtien});
+            modeltable.insertRow(i, new Object[]{a.mahdx, a.ngayhd, String.format("%.0f", a.tongtien)});
         }
         jTable1.setModel(modeltable);
     }
@@ -40,6 +40,7 @@ public class ThongKeThu extends javax.swing.JInternalFrame {
         rg.add(NgayRadioButton);
         rg.add(ThangRadioButton);
         rg.add(NamRadioButton);
+        rg.setSelected(NgayRadioButton.getModel(),true);
     }
 
     /**
@@ -70,16 +71,11 @@ public class ThongKeThu extends javax.swing.JInternalFrame {
 
         NgayXuatLabel.setText("Thời gian:");
 
-        NgayText.setEnabled(false);
-
-        ThangText.setEnabled(false);
         ThangText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ThangTextActionPerformed(evt);
             }
         });
-
-        NamText.setEnabled(false);
 
         TongTienLabel.setText("Tổng tiền:");
 
@@ -136,7 +132,7 @@ public class ThongKeThu extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(LoaiLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(NgayRadioButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ThangRadioButton)
@@ -172,7 +168,7 @@ public class ThongKeThu extends javax.swing.JInternalFrame {
                     .addComponent(NgayRadioButton)
                     .addComponent(ThangRadioButton)
                     .addComponent(NamRadioButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(0, 0, 0)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -187,7 +183,6 @@ public class ThongKeThu extends javax.swing.JInternalFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TongTienLabel)
                     .addComponent(TongTienText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -291,7 +286,7 @@ public class ThongKeThu extends javax.swing.JInternalFrame {
         {
             tongtien += Float.parseFloat(String.valueOf(modeltable.getValueAt(i,2)));
         }
-        TongTienText.setText(String.valueOf(tongtien));
+        TongTienText.setText(String.format("%.0f", tongtien));
     }//GEN-LAST:event_ThongKeButtonActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked

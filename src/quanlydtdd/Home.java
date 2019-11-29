@@ -39,7 +39,7 @@ public class Home extends javax.swing.JFrame {
     
     private boolean isAccessQLKH(String quyen)
     {
-        String[] allow = {"MQ04", "MQ01", "MQ02", "MQ03"};
+        String[] allow = {"MQ04", "MQ01"};
         boolean isAccess = false;
         for(int i = 0; i < allow.length; i++)
         {
@@ -81,7 +81,7 @@ public class Home extends javax.swing.JFrame {
     
     private boolean isAccessQLNV(String quyen)
     {
-        String[] allow = {"MQ04", "MQ01", "MQ02", "MQ03"};
+        String[] allow = {"MQ04"};
         boolean isAccess = false;
         for(int i = 0; i < allow.length; i++)
         {
@@ -95,7 +95,7 @@ public class Home extends javax.swing.JFrame {
     
     private boolean isAccessQLNCC(String quyen)
     {
-        String[] allow = {"MQ04", "MQ01", "MQ02", "MQ03"};
+        String[] allow = {"MQ04", "MQ03"};
         boolean isAccess = false;
         for(int i = 0; i < allow.length; i++)
         {
@@ -109,7 +109,7 @@ public class Home extends javax.swing.JFrame {
     
     private boolean isAccessTKBC(String quyen)
     {
-        String[] allow = {"MQ04", "MQ01", "MQ02", "MQ03"};
+        String[] allow = {"MQ04", "MQ02", "MQ03"};
         boolean isAccess = false;
         for(int i = 0; i < allow.length; i++)
         {
@@ -205,10 +205,12 @@ public class Home extends javax.swing.JFrame {
         QLKH.setBackground(new java.awt.Color(33, 178, 113));
         QLKH.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         QLKH.setForeground(new java.awt.Color(0, 0, 0));
+        QLKH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon navigation/customer-30.png"))); // NOI18N
         QLKH.setText("Khách hàng");
         QLKH.setBorder(null);
         QLKH.setContentAreaFilled(false);
         QLKH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        QLKH.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         QLKH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QLKHActionPerformed(evt);
@@ -218,10 +220,12 @@ public class Home extends javax.swing.JFrame {
         QLSP.setBackground(new java.awt.Color(33, 178, 113));
         QLSP.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         QLSP.setForeground(new java.awt.Color(0, 0, 0));
+        QLSP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon navigation/cell-phone-30.png"))); // NOI18N
         QLSP.setText("Sản phẩm");
         QLSP.setBorder(null);
         QLSP.setContentAreaFilled(false);
         QLSP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        QLSP.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         QLSP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QLSPActionPerformed(evt);
@@ -231,10 +235,12 @@ public class Home extends javax.swing.JFrame {
         QLHD.setBackground(new java.awt.Color(33, 178, 113));
         QLHD.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         QLHD.setForeground(new java.awt.Color(0, 0, 0));
+        QLHD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon navigation/bill-30.png"))); // NOI18N
         QLHD.setText("Hóa đơn");
         QLHD.setBorder(null);
         QLHD.setContentAreaFilled(false);
         QLHD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        QLHD.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         QLHD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QLHDActionPerformed(evt);
@@ -244,10 +250,12 @@ public class Home extends javax.swing.JFrame {
         QLNV.setBackground(new java.awt.Color(33, 178, 113));
         QLNV.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         QLNV.setForeground(new java.awt.Color(0, 0, 0));
+        QLNV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon navigation/staff-30.png"))); // NOI18N
         QLNV.setText("Nhân viên");
         QLNV.setBorder(null);
         QLNV.setContentAreaFilled(false);
         QLNV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        QLNV.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         QLNV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QLNVActionPerformed(evt);
@@ -257,10 +265,12 @@ public class Home extends javax.swing.JFrame {
         TKBC.setBackground(new java.awt.Color(33, 178, 113));
         TKBC.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         TKBC.setForeground(new java.awt.Color(0, 0, 0));
-        TKBC.setText("Thống kê báo cáo");
+        TKBC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon navigation/statistics-30.png"))); // NOI18N
+        TKBC.setText("Thống kê");
         TKBC.setBorder(null);
         TKBC.setContentAreaFilled(false);
         TKBC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TKBC.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         TKBC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TKBCActionPerformed(evt);
@@ -270,10 +280,12 @@ public class Home extends javax.swing.JFrame {
         QLNCC.setBackground(new java.awt.Color(33, 178, 113));
         QLNCC.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         QLNCC.setForeground(new java.awt.Color(0, 0, 0));
+        QLNCC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon navigation/supplier-30.png"))); // NOI18N
         QLNCC.setText("Nhà cung cấp");
         QLNCC.setBorder(null);
         QLNCC.setContentAreaFilled(false);
         QLNCC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        QLNCC.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         QLNCC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QLNCCActionPerformed(evt);

@@ -28,7 +28,7 @@ public class ThongKeChi extends javax.swing.JInternalFrame {
         modeltable.getDataVector().removeAllElements();
         for (int i = 0; i < dshd.size(); i++) {
             hoadonnhapDTO a = (hoadonnhapDTO) dshd.get(i);
-            modeltable.insertRow(i, new Object[]{a.mahdn, a.ngaynhap, a.tongtien});
+            modeltable.insertRow(i, new Object[]{a.mahdn, a.ngaynhap, String.format("%.0f", a.tongtien)});
         }
         jTable1.setModel(modeltable);
     }
@@ -40,6 +40,7 @@ public class ThongKeChi extends javax.swing.JInternalFrame {
         rg.add(NgayRadioButton);
         rg.add(ThangRadioButton);
         rg.add(NamRadioButton);
+        rg.setSelected(NgayRadioButton.getModel(),true);
     }
 
     /**
@@ -70,16 +71,17 @@ public class ThongKeChi extends javax.swing.JInternalFrame {
 
         NgayXuatLabel.setText("Thời gian:");
 
-        NgayText.setEnabled(false);
-
-        ThangText.setEnabled(false);
         ThangText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ThangTextActionPerformed(evt);
             }
         });
 
-        NamText.setEnabled(false);
+        NamText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NamTextActionPerformed(evt);
+            }
+        });
 
         TongTienLabel.setText("Tổng tiền:");
 
@@ -136,7 +138,7 @@ public class ThongKeChi extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(LoaiLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(NgayRadioButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ThangRadioButton)
@@ -161,7 +163,7 @@ public class ThongKeChi extends javax.swing.JInternalFrame {
                             .addComponent(TongTienText))
                         .addGap(18, 18, 18)
                         .addComponent(ThongKeButton)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,7 +174,6 @@ public class ThongKeChi extends javax.swing.JInternalFrame {
                     .addComponent(NgayRadioButton)
                     .addComponent(ThangRadioButton)
                     .addComponent(NamRadioButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -187,14 +188,13 @@ public class ThongKeChi extends javax.swing.JInternalFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TongTienLabel)
                     .addComponent(TongTienText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(88, 88, 88))
+                .addGap(86, 86, 86))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {NgayXuatLabel, ThangText, TongTienLabel, TongTienText});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {NgayXuatLabel, ThangText});
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -248,9 +248,9 @@ public class ThongKeChi extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -291,7 +291,7 @@ public class ThongKeChi extends javax.swing.JInternalFrame {
         {
             tongtien += Float.parseFloat(String.valueOf(modeltable.getValueAt(i,2)));
         }
-        TongTienText.setText(String.valueOf(tongtien));
+        TongTienText.setText(String.format("%.0f", tongtien));
     }//GEN-LAST:event_ThongKeButtonActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -327,6 +327,10 @@ public class ThongKeChi extends javax.swing.JInternalFrame {
         NamText.setText("");
         ThongKeButton.setEnabled(true);
     }//GEN-LAST:event_NamRadioButtonActionPerformed
+
+    private void NamTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NamTextActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

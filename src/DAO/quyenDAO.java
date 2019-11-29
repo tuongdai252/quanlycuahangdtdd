@@ -108,7 +108,7 @@ public class quyenDAO {
             Connection con =ConnectionProvider.Connect();
             
             String sql= "SELECT * FROM quyen WHERE maquyen LIKE '%" + tukhoa +"%'"
-                                            +" OR tenquyen LIKE '%" + tukhoa + "%'";
+                                            +" OR tenquyen LIKE N'%" + tukhoa + "%'";
             Statement st= con.createStatement();
             ResultSet rs= st.executeQuery(sql);
 

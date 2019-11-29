@@ -243,6 +243,16 @@ public class QuanLyQuyen extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_TenTextActionPerformed
 
     private void SuaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuaButtonActionPerformed
+        if(MaQuyenText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã quyền!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(TenText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập tên quyền!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         quyenDTO q = new quyenDTO();
         q.maquyen = MaQuyenText.getText();
         q.quyen = TenText.getText();
@@ -289,6 +299,9 @@ public class QuanLyQuyen extends javax.swing.JInternalFrame {
         String tukhoa = TuKhoaText.getText();
         ArrayList dsq = quyenBUS.TimKiemTheoTuKhoa(tukhoa);
         HienThiDS(dsq);
+        if(dsq.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Không tìm thấy kết quả!!!","Not found",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_TimButtonActionPerformed
 
     private void DanhSachButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DanhSachButtonActionPerformed

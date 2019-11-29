@@ -35,8 +35,8 @@ public class XemChiTietHDX extends javax.swing.JFrame {
         NX.setText(nx);
     }
     
-    public void setTT(float tt){
-        TT.setText(String.valueOf(tt));
+    public void setTT(String tt){
+        TT.setText(tt);
     }
     
     String [] columns = new String [] {"Mã sản phẩm","Số lượng","Đơn giá","Thành tiền"};
@@ -47,7 +47,7 @@ public class XemChiTietHDX extends javax.swing.JFrame {
         modeltable.getDataVector().removeAllElements();
         for (int i = 0; i < dshd.size(); i++) {
             chitiethoadonxuatDTO a = (chitiethoadonxuatDTO) dshd.get(i);
-            modeltable.insertRow(i, new Object[]{a.masp, a.soluong, a.dongia, a.thanhtien});
+            modeltable.insertRow(i, new Object[]{a.masp, a.soluong, String.format("%.0f", a.dongia), a.thanhtien});
         }
         jTable1.setModel(modeltable);
     }

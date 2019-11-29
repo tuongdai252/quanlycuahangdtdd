@@ -85,9 +85,9 @@ public class nhacungcapDAO {
             Connection con =ConnectionProvider.Connect();
             
             String sql= "SELECT * FROM nhacungcap WHERE mancc LIKE '%" + tukhoa +"%'"
-                                            +" OR tenncc LIKE '%" + tukhoa + "%'"
+                                            +" OR tenncc LIKE N'%" + tukhoa + "%'"
                                             +" OR sdt LIKE '%" + tukhoa + "%'"
-                                            +" OR diachi LIKE '%" + tukhoa + "%'";
+                                            +" OR diachi LIKE N'%" + tukhoa + "%'";
             Statement st= con.createStatement();
             ResultSet rs= st.executeQuery(sql);
 

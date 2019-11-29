@@ -59,7 +59,7 @@ public class sanphamDAO {
             Connection con =ConnectionProvider.Connect();
             
             String sql= "SELECT * FROM sanpham WHERE masp LIKE '%" + tukhoa +"%'"
-                                            +" OR tensp LIKE '%" + tukhoa + "%'"
+                                            +" OR tensp LIKE N'%" + tukhoa + "%'"
                                             +" OR gia LIKE '%" + tukhoa + "%'";
             Statement st= con.createStatement();
             ResultSet rs= st.executeQuery(sql);

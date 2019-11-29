@@ -35,8 +35,8 @@ public class XemChiTietHDN extends javax.swing.JFrame {
         NN.setText(nn);
     }
     
-    public void setTT(float tt){
-        TT.setText(String.valueOf(tt));
+    public void setTT(String tt){
+        TT.setText(tt);
     }
     
     String [] columns = new String [] {"Mã sản phẩm","Số lượng","Đơn giá","Thành tiền"};

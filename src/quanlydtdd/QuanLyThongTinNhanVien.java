@@ -43,7 +43,7 @@ public class QuanLyThongTinNhanVien extends javax.swing.JInternalFrame {
             nhanvienDTO a = (nhanvienDTO) ds.get(i);
             ArrayList dsq = quyenBUS.TimKiemTheoMa(a.maquyen);
             quyenDTO b = (quyenDTO) dsq.get(0);
-            modeltable.insertRow(i, new Object[]{a.manv, a.ho, a.ten, a.sdt, a.diachi, a.ngayvaolam, a.chucvu, a.luong, b.quyen});
+            modeltable.insertRow(i, new Object[]{a.manv, a.ho, a.ten, a.sdt, a.diachi, a.ngayvaolam, a.chucvu, String.format("%.0f", a.luong), b.quyen});
         }
         jTable1.setModel(modeltable);
     }
@@ -168,6 +168,7 @@ public class QuanLyThongTinNhanVien extends javax.swing.JInternalFrame {
         });
 
         SuaButton.setText("Sửa");
+        SuaButton.setEnabled(false);
         SuaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SuaButtonActionPerformed(evt);
@@ -175,6 +176,7 @@ public class QuanLyThongTinNhanVien extends javax.swing.JInternalFrame {
         });
 
         XoaButton.setText("Xóa");
+        XoaButton.setEnabled(false);
         XoaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XoaButtonActionPerformed(evt);
@@ -414,6 +416,16 @@ public class QuanLyThongTinNhanVien extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_LuongTextActionPerformed
 
     private void SuaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuaButtonActionPerformed
+        if(MaNVText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã nhân viên!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(HoText.getText().trim().isEmpty() || TenText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập đầy đủ họ tên nhân viên!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         nhanvienDTO nv = new nhanvienDTO();
         nv.manv = MaNVText.getText();
         nv.ho = HoText.getText();
@@ -483,6 +495,9 @@ public class QuanLyThongTinNhanVien extends javax.swing.JInternalFrame {
         String tukhoa = TuKhoaText.getText();
         ArrayList dsnv = nhanvienBUS.TimKiemTheoTuKhoa(tukhoa);
         HienThiDS(dsnv);
+        if(dsnv.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Không tìm thấy kết quả!!!","Not found",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_TimButtonActionPerformed
 
     private void DanhSachButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DanhSachButtonActionPerformed
@@ -498,7 +513,7 @@ public class QuanLyThongTinNhanVien extends javax.swing.JInternalFrame {
         String diachi = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 4);
         String ngayvaolam = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 5);
         String chucvu = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 6);
-        float luong = (float) modeltable.getValueAt(jTable1.getSelectedRow(), 7);
+        String luong = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 7);
         String quyen = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 8);
         MaNVText.setText(manv);
         HoText.setText(ho);
@@ -507,7 +522,7 @@ public class QuanLyThongTinNhanVien extends javax.swing.JInternalFrame {
         DiaChiText.setText(diachi);
         NgayVaoLamText.setText(ngayvaolam);
         ChucVuText.setText(chucvu);
-        LuongText.setText(String.valueOf(luong));
+        LuongText.setText(luong);
         for (int i = 0; i< QuyenComboBox.getItemCount(); i++) {
             if(quyen.equals(QuyenComboBox.getItemAt(i)))
                 QuyenComboBox.setSelectedIndex(i);

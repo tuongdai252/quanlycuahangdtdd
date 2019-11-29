@@ -57,10 +57,10 @@ public class khachhangDAO {
             Connection con =ConnectionProvider.Connect();
             
             String sql= "SELECT * FROM khachhang WHERE makh LIKE '%" + tukhoa +"%'"
-                                            +" OR ho LIKE '%" + tukhoa + "%'"
-                                            +" OR ten LIKE '%" + tukhoa + "%'"
+                                            +" OR ho LIKE N'%" + tukhoa + "%'"
+                                            +" OR ten LIKE N'%" + tukhoa + "%'"
                                             +" OR sdt LIKE '%" + tukhoa + "%'"
-                                            +" OR diachi LIKE '%" + tukhoa + "%'";
+                                            +" OR diachi LIKE N'%" + tukhoa + "%'";
             Statement st= con.createStatement();
             ResultSet rs= st.executeQuery(sql);
 

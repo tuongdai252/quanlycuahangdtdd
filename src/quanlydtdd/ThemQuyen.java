@@ -142,6 +142,16 @@ public class ThemQuyen extends javax.swing.JFrame {
     }//GEN-LAST:event_HuyButtonActionPerformed
 
     private void ThemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemButtonActionPerformed
+        if(MaQuyenText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã quyền!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(TenText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập tên quyền!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         if (quyenBUS.kiemTraTonTai(MaQuyenText.getText()) == true)
         {
             JOptionPane.showConfirmDialog((Component) null, "Mã quyền đã tồn tại", "alert", JOptionPane.CLOSED_OPTION);

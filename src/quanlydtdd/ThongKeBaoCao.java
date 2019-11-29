@@ -22,6 +22,10 @@ public class ThongKeBaoCao extends javax.swing.JInternalFrame {
      */
     private void ThongKeThu()
     {
+        TKThu.setForeground(new java.awt.Color(0,0,0));
+        TKChi.setForeground(new java.awt.Color(102,102,102));
+        TKSPXuat.setForeground(new java.awt.Color(102,102,102));
+        TKSPNhap.setForeground(new java.awt.Color(102,102,102));
         ThongKeThu tk = new ThongKeThu();
         /*Remove title bar*/
         BasicInternalFrameUI btk = (BasicInternalFrameUI)tk.getUI();
@@ -41,6 +45,10 @@ public class ThongKeBaoCao extends javax.swing.JInternalFrame {
     
     private void ThongKeChi()
     {
+        TKChi.setForeground(new java.awt.Color(0,0,0));
+        TKThu.setForeground(new java.awt.Color(102,102,102));
+        TKSPXuat.setForeground(new java.awt.Color(102,102,102));
+        TKSPNhap.setForeground(new java.awt.Color(102,102,102));
         ThongKeChi tk = new ThongKeChi();
         /*Remove title bar*/
         BasicInternalFrameUI btk = (BasicInternalFrameUI)tk.getUI();
@@ -60,6 +68,10 @@ public class ThongKeBaoCao extends javax.swing.JInternalFrame {
     
     private void ThongKeSPXuat()
     {
+        TKSPXuat.setForeground(new java.awt.Color(0,0,0));
+        TKThu.setForeground(new java.awt.Color(102,102,102));
+        TKChi.setForeground(new java.awt.Color(102,102,102));
+        TKSPNhap.setForeground(new java.awt.Color(102,102,102));
         ThongKeSPXuat tk = new ThongKeSPXuat();
         /*Remove title bar*/
         BasicInternalFrameUI btk = (BasicInternalFrameUI)tk.getUI();
@@ -79,6 +91,10 @@ public class ThongKeBaoCao extends javax.swing.JInternalFrame {
     
     private void ThongKeSPNhap()
     {
+        TKSPNhap.setForeground(new java.awt.Color(0,0,0));
+        TKThu.setForeground(new java.awt.Color(102,102,102));
+        TKChi.setForeground(new java.awt.Color(102,102,102));
+        TKSPXuat.setForeground(new java.awt.Color(102,102,102));
         ThongKeSPNhap tk = new ThongKeSPNhap();
         /*Remove title bar*/
         BasicInternalFrameUI btk = (BasicInternalFrameUI)tk.getUI();
@@ -98,6 +114,19 @@ public class ThongKeBaoCao extends javax.swing.JInternalFrame {
     
     public ThongKeBaoCao() {
         initComponents();
+        //Giao dien button Thong ke hoanh thu
+        TKThu.setOpaque(false);
+        TKThu.setContentAreaFilled(false);
+        //Giao dien button Thongke chi phi
+        TKChi.setOpaque(false);
+        TKChi.setContentAreaFilled(false);
+        //Giao dien button Thong ke san pham xuat
+        TKSPXuat.setOpaque(false);
+        TKSPXuat.setContentAreaFilled(false);
+        //Giao dien button Thong ke san pham nhap
+        TKSPNhap.setOpaque(false);
+        TKSPNhap.setContentAreaFilled(false);
+        //Group button
         ButtonGroup btg = new ButtonGroup();
         btg.add(TKThu);
         btg.add(TKChi);
@@ -118,33 +147,53 @@ public class ThongKeBaoCao extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         TKThu = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
         TKChi = new javax.swing.JToggleButton();
+        jLabel2 = new javax.swing.JLabel();
         TKSPXuat = new javax.swing.JToggleButton();
+        jLabel3 = new javax.swing.JLabel();
         TKSPNhap = new javax.swing.JToggleButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
 
-        TKThu.setText("THỐNG KÊ THU");
+        jPanel1.setBackground(new java.awt.Color(251, 176, 59));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+
+        TKThu.setSelected(true);
+        TKThu.setText("DOANH THU");
+        TKThu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         TKThu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TKThuActionPerformed(evt);
             }
         });
 
-        TKChi.setText("THỐNG KÊ CHI");
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jLabel1.setText("|");
+
+        TKChi.setText("CHI PHÍ");
+        TKChi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         TKChi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TKChiActionPerformed(evt);
             }
         });
 
-        TKSPXuat.setText("THỐNG KÊ SẢN PHẨM XUẤT");
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jLabel2.setText("|");
+
+        TKSPXuat.setText("SẢN PHẨM XUẤT");
+        TKSPXuat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         TKSPXuat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TKSPXuatActionPerformed(evt);
             }
         });
 
-        TKSPNhap.setText("THỐNG KÊ SẢN PHẨM NHẬP");
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jLabel3.setText("|");
+
+        TKSPNhap.setText("SẢN PHẨM NHẬP");
+        TKSPNhap.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         TKSPNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TKSPNhapActionPerformed(evt);
@@ -157,41 +206,57 @@ public class ThongKeBaoCao extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TKThu, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TKChi, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TKSPXuat)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TKSPNhap)
+                .addComponent(TKThu, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TKChi, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TKSPXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addGap(12, 12, 12)
+                .addComponent(TKSPNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(TKChi, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(TKSPNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(TKSPXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(TKThu, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(TKChi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TKThu, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TKSPXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 648, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 496, Short.MAX_VALUE)
+            .addGap(0, 494, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jDesktopPane1)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,6 +292,9 @@ public class ThongKeBaoCao extends javax.swing.JInternalFrame {
     private javax.swing.JToggleButton TKSPXuat;
     private javax.swing.JToggleButton TKThu;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

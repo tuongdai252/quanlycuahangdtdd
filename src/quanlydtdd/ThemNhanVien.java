@@ -281,6 +281,16 @@ public class ThemNhanVien extends javax.swing.JFrame {
     }//GEN-LAST:event_HuyButtonActionPerformed
 
     private void ThemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemButtonActionPerformed
+        if(MaNVText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã nhân viên!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(HoText.getText().trim().isEmpty() || TenText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập đầy đủ họ tên nhân viên!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         if (nhanvienBUS.kiemTraTonTai(MaNVText.getText()) == true)
         {
             JOptionPane.showConfirmDialog((Component) null, "Mã nhân viên đã tồn tại", "alert", JOptionPane.CLOSED_OPTION);

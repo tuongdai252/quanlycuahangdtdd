@@ -22,6 +22,8 @@ public class QuanLySanPham extends javax.swing.JInternalFrame {
      */
     private void QLSanPham()
     {
+        QLSanPham.setForeground(new java.awt.Color(0,0,0));
+        QLPhanLoai.setForeground(new java.awt.Color(102,102,102));
         QuanLyThongTinSanPham qlsp = new QuanLyThongTinSanPham();
         /*Remove title bar*/
         BasicInternalFrameUI bqlsp = (BasicInternalFrameUI)qlsp.getUI();
@@ -41,6 +43,8 @@ public class QuanLySanPham extends javax.swing.JInternalFrame {
     
     private void QLPhanLoai()
     {
+        QLPhanLoai.setForeground(new java.awt.Color(0,0,0));
+        QLSanPham.setForeground(new java.awt.Color(102,102,102));
         QuanLyLoaiSP qlpl = new QuanLyLoaiSP();
         /*Remove title bar*/
         BasicInternalFrameUI bqlpl = (BasicInternalFrameUI)qlpl.getUI();
@@ -60,6 +64,13 @@ public class QuanLySanPham extends javax.swing.JInternalFrame {
     
     public QuanLySanPham() {
         initComponents();
+        //Giao dien button Quan ly san pham
+        QLSanPham.setOpaque(false);
+        QLSanPham.setContentAreaFilled(false);
+        //Giao dien button Quan ly phan loai
+        QLPhanLoai.setOpaque(false);
+        QLPhanLoai.setContentAreaFilled(false);
+        //Group button
         ButtonGroup btg = new ButtonGroup();
         btg.add(QLSanPham);
         btg.add(QLPhanLoai);
@@ -79,21 +90,34 @@ public class QuanLySanPham extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         QLSanPham = new javax.swing.JToggleButton();
         QLPhanLoai = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
 
+        jPanel1.setBackground(new java.awt.Color(251, 176, 59));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+
+        QLSanPham.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        QLSanPham.setSelected(true);
         QLSanPham.setText("QUẢN LÝ  SẢN PHẨM");
+        QLSanPham.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         QLSanPham.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QLSanPhamActionPerformed(evt);
             }
         });
 
+        QLPhanLoai.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         QLPhanLoai.setText("QUẢN LÝ PHÂN LOẠI");
+        QLPhanLoai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         QLPhanLoai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QLPhanLoaiActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("|");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -101,16 +125,21 @@ public class QuanLySanPham extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(QLSanPham, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                .addComponent(QLSanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(QLPhanLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(QLPhanLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                .addComponent(QLSanPham, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                .addComponent(QLPhanLoai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(QLSanPham, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+            .addComponent(QLPhanLoai, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
@@ -121,7 +150,7 @@ public class QuanLySanPham extends javax.swing.JInternalFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 497, Short.MAX_VALUE)
+            .addGap(0, 489, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -155,6 +184,7 @@ public class QuanLySanPham extends javax.swing.JInternalFrame {
     private javax.swing.JToggleButton QLPhanLoai;
     private javax.swing.JToggleButton QLSanPham;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -150,9 +150,9 @@ public class ThemHoaDonXuat extends javax.swing.JFrame {
                 .addComponent(DonGiaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DonGiaText, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(ThemButton)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(XoaButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -167,10 +167,9 @@ public class ThemHoaDonXuat extends javax.swing.JFrame {
                         .addComponent(MaSPText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(SOLuongLabel)
                         .addComponent(DonGiaLabel)
-                        .addComponent(DonGiaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ThemButton)
-                        .addComponent(XoaButton)))
+                        .addComponent(DonGiaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ThemButton))
+                    .addComponent(XoaButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -406,6 +405,21 @@ public class ThemHoaDonXuat extends javax.swing.JFrame {
     }//GEN-LAST:event_HuyButtonActionPerformed
 
     private void LuuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LuuButtonActionPerformed
+        if(MaHDText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã hóa đơn!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(MaNVText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã nhân viên!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(MaKhachText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã khách hàng!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         if (hoadonxuatBUS.kiemTraTonTai(MaHDText.getText()) == true)
         {
             JOptionPane.showConfirmDialog((Component) null, "Mã hóa đơn đã tồn tại", "alert", JOptionPane.CLOSED_OPTION);

@@ -70,7 +70,7 @@ public class QuanLyThongTinSanPham extends javax.swing.JInternalFrame {
             loaisanphamDTO b = (loaisanphamDTO) dsl.get(0);
             ArrayList dsncc = nhacungcapBUS.TimKiemTheoTuKhoa(a.mancc);
             nhacungcapDTO c = (nhacungcapDTO) dsncc.get(0);
-            modeltable.insertRow(i, new Object[]{a.masp, a.tensp, b.tenloai, c.tenncc, a.hinhanh, a.soluong, a.gia});
+            modeltable.insertRow(i, new Object[]{a.masp, a.tensp, b.tenloai, c.tenncc, a.hinhanh, a.soluong, String.format("%.0f", a.gia)});
         }
         jTable1.setModel(modeltable);
     }
@@ -412,6 +412,16 @@ public class QuanLyThongTinSanPham extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_TenTextActionPerformed
 
     private void SuaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuaButtonActionPerformed
+        if(MaSPText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã sản phẩm!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(TenText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập tên sản phẩm!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         sanphamDTO sp = new sanphamDTO();
         sp.masp = MaSPText.getText();
         sp.tensp = TenText.getText();
@@ -503,6 +513,9 @@ public class QuanLyThongTinSanPham extends javax.swing.JInternalFrame {
         String tukhoa = TuKhoaText.getText();
         ArrayList dssp = sanphamBUS.TimKiemTheoTuKhoa(tukhoa);
         HienThiDS(dssp);
+        if(dssp.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Không tìm thấy kết quả!!!","Not found",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_TimButtonActionPerformed
 
     private void DanhSachButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DanhSachButtonActionPerformed
@@ -517,11 +530,11 @@ public class QuanLyThongTinSanPham extends javax.swing.JInternalFrame {
         String ncc = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 3);
         String hinhanh = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 4);
         int soluong = (int) modeltable.getValueAt(jTable1.getSelectedRow(), 5);
-        float gia = (float) modeltable.getValueAt(jTable1.getSelectedRow(), 6);
+        String gia = (String) modeltable.getValueAt(jTable1.getSelectedRow(), 6);
         MaSPText.setText(masp);
         TenText.setText(tensp);
         SoLuongText.setText(String.valueOf(soluong));
-        GiaText.setText(String.valueOf(gia));
+        GiaText.setText(gia);
         for (int i = 0; i< LoaiComboBox.getItemCount(); i++) {
             if(loai.equals(LoaiComboBox.getItemAt(i)))
                 LoaiComboBox.setSelectedIndex(i);

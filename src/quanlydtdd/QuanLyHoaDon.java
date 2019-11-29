@@ -5,9 +5,12 @@
  */
 package quanlydtdd;
 
+import java.awt.Color;
+import java.awt.Insets;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -22,6 +25,8 @@ public class QuanLyHoaDon extends javax.swing.JInternalFrame {
      */
     private void QLHDXuat()
     {
+        QLHDXuat.setForeground(new java.awt.Color(0,0,0));
+        QLHDNhap.setForeground(new java.awt.Color(102,102,102));
         QuanLyHoaDonXuat qlhdx = new QuanLyHoaDonXuat();
         /*Remove title bar*/
         BasicInternalFrameUI bqlhdx = (BasicInternalFrameUI)qlhdx.getUI();
@@ -41,6 +46,8 @@ public class QuanLyHoaDon extends javax.swing.JInternalFrame {
     
     private void QLHDNhap()
     {
+        QLHDNhap.setForeground(new java.awt.Color(0,0,0));
+        QLHDXuat.setForeground(new java.awt.Color(102,102,102));
         QuanLyHoaDonNhap qlhdn = new QuanLyHoaDonNhap();
         /*Remove title bar*/
         BasicInternalFrameUI bqlhdn = (BasicInternalFrameUI)qlhdn.getUI();
@@ -61,6 +68,13 @@ public class QuanLyHoaDon extends javax.swing.JInternalFrame {
     public QuanLyHoaDon() {
         initComponents();
         ButtonGroup btg = new ButtonGroup();
+        //Giao dien button Hoa don nhap
+        QLHDNhap.setOpaque(false);
+        QLHDNhap.setContentAreaFilled(false);
+        //Giao dien button Hoadon xuat
+        QLHDXuat.setOpaque(false);
+        QLHDXuat.setContentAreaFilled(false);
+        //Group button
         btg.add(QLHDNhap);
         btg.add(QLHDXuat);
         btg.setSelected(QLHDXuat.getModel(),true);
@@ -79,21 +93,33 @@ public class QuanLyHoaDon extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         QLHDXuat = new javax.swing.JToggleButton();
         QLHDNhap = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
 
+        jPanel1.setBackground(new java.awt.Color(251, 176, 59));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+
+        QLHDXuat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        QLHDXuat.setSelected(true);
         QLHDXuat.setText("QUẢN LÝ  HÓA ĐƠN XUÂT");
+        QLHDXuat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         QLHDXuat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QLHDXuatActionPerformed(evt);
             }
         });
 
+        QLHDNhap.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         QLHDNhap.setText("QUẢN LÝ HÓA ĐƠN NHẬP");
+        QLHDNhap.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         QLHDNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QLHDNhapActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jLabel1.setText("|");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -101,16 +127,20 @@ public class QuanLyHoaDon extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(QLHDXuat, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                .addComponent(QLHDXuat, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(QLHDNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                .addComponent(QLHDXuat, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                .addComponent(QLHDNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(QLHDXuat, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+            .addComponent(QLHDNhap, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
@@ -121,7 +151,7 @@ public class QuanLyHoaDon extends javax.swing.JInternalFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 497, Short.MAX_VALUE)
+            .addGap(0, 492, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -155,6 +185,7 @@ public class QuanLyHoaDon extends javax.swing.JInternalFrame {
     private javax.swing.JToggleButton QLHDNhap;
     private javax.swing.JToggleButton QLHDXuat;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

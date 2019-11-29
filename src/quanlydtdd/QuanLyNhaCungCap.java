@@ -294,6 +294,16 @@ public class QuanLyNhaCungCap extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_DiaChiTextActionPerformed
 
     private void SuaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuaButtonActionPerformed
+        if(MaNCCText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập mã nhà cung cấp!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(TenText.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Bạn chưa nhập tên nhà cung cấp!!!!","Missing information",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         nhacungcapDTO ncc = new nhacungcapDTO();
         ncc.mancc = MaNCCText.getText();
         ncc.tenncc = TenText.getText();
@@ -346,6 +356,9 @@ public class QuanLyNhaCungCap extends javax.swing.JInternalFrame {
         String tukhoa = TuKhoaText.getText();
         ArrayList dsncc = nhacungcapBUS.TimKiemTheoTuKhoa(tukhoa);
         HienThiDS(dsncc);
+        if(dsncc.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Không tìm thấy kết quả!!!","Not found",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_TimButtonActionPerformed
 
     private void DanhSachButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DanhSachButtonActionPerformed
