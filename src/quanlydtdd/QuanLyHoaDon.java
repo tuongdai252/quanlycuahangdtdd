@@ -101,7 +101,7 @@ public class QuanLyHoaDon extends javax.swing.JInternalFrame {
 
         QLHDXuat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         QLHDXuat.setSelected(true);
-        QLHDXuat.setText("QUẢN LÝ  HÓA ĐƠN XUÂT");
+        QLHDXuat.setText("QUẢN LÝ HÓA ĐƠN XUÂT");
         QLHDXuat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         QLHDXuat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

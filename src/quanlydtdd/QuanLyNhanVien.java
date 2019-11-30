@@ -95,7 +95,7 @@ public class QuanLyNhanVien extends javax.swing.JInternalFrame {
 
         QLNhanVien.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         QLNhanVien.setSelected(true);
-        QLNhanVien.setText("QUẢN LÝ  NHÂN VIÊN");
+        QLNhanVien.setText("QUẢN LÝ NHÂN VIÊN");
         QLNhanVien.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         QLNhanVien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

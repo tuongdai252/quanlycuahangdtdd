@@ -43,11 +43,11 @@
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="HoLabel" max="32767" attributes="0"/>
-                                  <Component id="MaNVLabel" min="-2" pref="60" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="HoLabel" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="MaNVLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -60,14 +60,14 @@
                                   <Component id="TenLabel" max="32767" attributes="0"/>
                                   <Component id="SDTLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TenText" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="SDTText" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="TenText" max="32767" attributes="0"/>
+                                  <Component id="SDTText" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="40" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="NgayVaoLamLabel" max="32767" attributes="0"/>
                           <Component id="LuongLabel" alignment="0" max="32767" attributes="0"/>
@@ -160,7 +160,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="MaNVLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="M&#xe3; nv:"/>
+        <Property name="text" type="java.lang.String" value="M&#xe3; nh&#xe2;n vi&#xea;n:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="MaNVText">

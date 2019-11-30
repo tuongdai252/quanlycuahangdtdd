@@ -435,7 +435,7 @@ public class ThemHoaDonXuat extends javax.swing.JFrame {
             JOptionPane.showConfirmDialog((Component) null, "Mã khách hàng không tồn tại", "alert", JOptionPane.CLOSED_OPTION);
             return;
         }
-        if (modeltable.getRowCount() < 0)
+        if (modeltable.getRowCount() < 1)
         {
             JOptionPane.showConfirmDialog((Component) null, "Chưa có chi tiết hóa đơn", "alert", JOptionPane.CLOSED_OPTION);
         }
@@ -478,7 +478,7 @@ public class ThemHoaDonXuat extends javax.swing.JFrame {
     }//GEN-LAST:event_XoaButtonActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        XoaButton.setEnabled(false);
+        XoaButton.setEnabled(true);
     }//GEN-LAST:event_jTable1MouseClicked
 
     /**

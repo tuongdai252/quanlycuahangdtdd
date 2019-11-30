@@ -98,7 +98,7 @@ public class QuanLySanPham extends javax.swing.JInternalFrame {
 
         QLSanPham.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         QLSanPham.setSelected(true);
-        QLSanPham.setText("QUẢN LÝ  SẢN PHẨM");
+        QLSanPham.setText("QUẢN LÝ SẢN PHẨM");
         QLSanPham.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         QLSanPham.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

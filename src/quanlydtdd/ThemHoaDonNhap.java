@@ -434,7 +434,7 @@ public class ThemHoaDonNhap extends javax.swing.JFrame {
             JOptionPane.showConfirmDialog((Component) null, "Mã nhà cung cấp không tồn tại", "alert", JOptionPane.CLOSED_OPTION);
             return;
         }
-        if (modeltable.getRowCount() < 0)
+        if (modeltable.getRowCount() < 1)
         {
             JOptionPane.showConfirmDialog((Component) null, "Chưa có chi tiết hóa đơn", "alert", JOptionPane.CLOSED_OPTION);
         }

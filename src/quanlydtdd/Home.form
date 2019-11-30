@@ -29,7 +29,7 @@
               <Component id="jPanel1" min="-2" pref="154" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel2" pref="646" max="32767" attributes="0"/>
+                  <Component id="jPanel2" pref="686" max="32767" attributes="0"/>
                   <Component id="jDesktopPane1" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -70,15 +70,15 @@
                   <Component id="jLabel8" min="-2" pref="134" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
-              <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="QLKH" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                      <Component id="QLSP" min="-2" pref="150" max="-2" attributes="0"/>
-                      <Component id="QLHD" min="-2" pref="150" max="-2" attributes="0"/>
-                      <Component id="QLNV" min="-2" pref="150" max="-2" attributes="0"/>
-                      <Component id="TKBC" min="-2" pref="150" max="-2" attributes="0"/>
-                      <Component id="QLNCC" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
+                      <Component id="QLKH" alignment="0" pref="150" max="32767" attributes="0"/>
+                      <Component id="QLSP" alignment="0" pref="150" max="32767" attributes="0"/>
+                      <Component id="QLHD" alignment="0" pref="150" max="32767" attributes="0"/>
+                      <Component id="QLNV" alignment="0" pref="150" max="32767" attributes="0"/>
+                      <Component id="TKBC" alignment="0" pref="150" max="32767" attributes="0"/>
+                      <Component id="QLNCC" alignment="0" pref="150" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -319,7 +319,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="450" max="-2" attributes="0"/>
-                  <EmptySpace pref="150" max="32767" attributes="0"/>
+                  <EmptySpace pref="190" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

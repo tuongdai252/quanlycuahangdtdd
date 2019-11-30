@@ -135,7 +135,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="MaHDLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="M&#xe3; H&#x110;:"/>
+            <Property name="text" type="java.lang.String" value="M&#xe3; ho&#xe1; &#x111;&#x1a1;n:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="MaHDText">

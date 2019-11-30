@@ -69,7 +69,7 @@ public class QuanLyHoaDonNhap extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        MaHDLabel.setText("Mã HĐ:");
+        MaHDLabel.setText("Mã hoá đơn:");
 
         MaHDText.setEditable(false);
         MaHDText.setEnabled(false);
@@ -79,7 +79,7 @@ public class QuanLyHoaDonNhap extends javax.swing.JInternalFrame {
             }
         });
 
-        MaNCCLabel.setText("Mã nhà cc:");
+        MaNCCLabel.setText("Mã nhà cung cấp:");
 
         MaNCCText.setEditable(false);
         MaNCCText.setEnabled(false);
